@@ -55,5 +55,40 @@ main() {
   pthread_t factory, warehouse;
   int status;
 
-  status = pthread_create(&factory, nullpt 
+  status = phtread_create(&factory, nullptr, factory_thread, nullptr);
+  if (status != 0){
+    cerr << "Faiiled " << endl;
+    return 1;
+  }
+
+  status = pthread_create(&warehouse, nullpt, warehouse_thread, nullptr);
+  if (status != 0) {
+    cerr << "Failed to create warehouse thread" << endl;
+    return 1;
+  }
+
+  while(true) {
+
+int boxes2sell;
+cout << "Number of boxes to sell"
+cin >> boxes2sell;
+
+if (boxes2sell < 0) break;
+ic = boxes2sell;
+print_thread("S: Thank you!" + to_string(boxes2sell);
+if (inventory_full && ic < 10 ) {
+  inventory_full = false;
+  print_thread("Space no free, resuming...");
+    else {
+      print_thread("not enough space");
+    
+    }
+}
+pthread_cancel(factory);
+pthread_cancel(warehouse);
+pthread_join(factory, NULL);
+pthread_join(warehouse, NULL);
+
+return 0;
+
 }
