@@ -42,10 +42,18 @@ void *warehouse_thread(void *arg) {
       print_thread("W: Box #" + to_string(ic) + "ready");
       if (ic >= 10) {
         ic = true; 
-        print_thread("W: ITS FULL!!!");
+        print_thread("W: ITS FULL!!!");e
       }
     }
   }
-  return null;
+  return NULL;
 }
 
+
+
+main() {
+  pthread_t factory, warehouse;
+  int status;
+
+  status = pthread_create(&factory, nullpt 
+}
