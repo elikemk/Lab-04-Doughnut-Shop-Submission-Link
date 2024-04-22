@@ -19,6 +19,9 @@ int inventory_count = 0;
 void *factory_thread(void *arg);
 void *warehouse_thread(void *arg);
 
+void print_thread(string& message){
+  cout << message << endl;
+}
 
 void *factory_thread(void *arg){
   while(true) 
