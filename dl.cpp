@@ -2,6 +2,7 @@
 #include <pthread.h> 
 #include <unistd.h>
 
+using namespace std;
 
 //These are the global varibales
 //3 threads that communicate through a set of global variables.  These variables will include an integer doughnut counter (donut_count), a boolean inventory status flag (inventory_full), and an integer inventory count (inventory_count):
@@ -17,4 +18,34 @@ int inventory_count = 0;
 
 void *factory_thread(void *arg);
 void *warehouse_thread(void *arg);
+
+
+void *factory_thread(void *arg){
+  while(true) 
+    if (!inventory_full)
+    {
+      dounut_count++;
+      print_thread("F: Doughnut #" + to_string(donut_count) + " produced")
+    
+  }else {
+      print_thread("F: The Production was Halted D:");
+  }
+}
+ return NULL;
+}
+
+void *warehouse_thread(void *arg) {
+  while (true) {
+    if (dc >= 12) { // donut count 
+      ic++; //inventory count
+      dc -= 12;
+      print_thread("W: Box #" + to_string(ic) + "ready");
+      if (ic >= 10) {
+        ic = true; 
+        print_thread("W: ITS FULL!!!");
+      }
+    }
+  }
+  return null;
+}
 
