@@ -55,18 +55,12 @@ void *warehouse_thread(void *arg) {
 
 
 main() {
-  pthread_t factory, warehouse;
+  pthread_t factory;
   int status;
 
-  status = phtread_create(&factory, nullptr, factory_thread, nullptr);
+  status = pthread_create(&factory, NULL, factory_thread, NULL);
   if (status != 0){
     cerr << "Faiiled " << endl;
-    return 1;
-  }
-
-  status = pthread_create(&warehouse, nullpt, warehouse_thread, nullptr);
-  if (status != 0) {
-    cerr << "Failed to create warehouse thread" << endl;
     return 1;
   }
 
