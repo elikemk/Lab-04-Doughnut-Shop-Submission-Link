@@ -24,7 +24,7 @@ void *factory_thread(void *arg){
   while(true) 
     if (!inventory_full)
     {
-      dounut_count++;
+      donut_count++;
       print_thread("F: Doughnut #" + to_string(donut_count) + " produced")
     
   }else {
